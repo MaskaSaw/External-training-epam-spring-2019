@@ -13,6 +13,8 @@ namespace Day01
             int[] arr2 = new int[] { 1, 2, 4, 5 };
             int[] resultArr = SortingMethods.QuickSort(arr2, 0, arr2.Length - 1);
             Assert.AreEqual(true, arr2.SequenceEqual(resultArr));
+            resultArr = SortingMethods.MergeSort(arr2);
+            Assert.AreEqual(true, arr2.SequenceEqual(resultArr));
         }
     }
 }
