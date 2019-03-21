@@ -11,14 +11,14 @@ namespace Day01
         /// <summary>
         /// This method represents a solution for MergeSort algorithm.
         /// </summary>
-        /// <param name="inputArray">This is a sortable array.</param>
+        /// <param name="inputArray">Array to sort.</param>
         /// <returns>Returns a sorted array.</returns>
         public static int[] MergeSort(int[] inputArray)
         {
             if (inputArray == null)
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Array cannot be null");
             if (inputArray.Length == 0)
-                throw new ArgumentException();
+                throw new ArgumentException("Array cannot be empty");
 
             if (inputArray.Length == 1)
                 return inputArray;
@@ -130,15 +130,13 @@ namespace Day01
         /// This is a side method for the MergeSort.
         /// </summary>
         /// <param name="inputArray">The array to change.</param>
-        /// <param name="arr1">First element index.</param>
-        /// <param name="arr2">Second element index.</param>
+        /// <param name="i">First element index.</param>
+        /// <param name="j">Second element index.</param>
         public static void Swap(ref int[] inputArray, int i, int j)
         {
             int buf = inputArray[i];
             inputArray[i] = inputArray[j];
             inputArray[j] = buf;
-        }
-
-        
+        }        
     }
 }
