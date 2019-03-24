@@ -55,10 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BiggerNumberFInder.cs" />
     <Compile Include="BitSwapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\BiggerNumberFinderNUnitTests.cs" />
     <Compile Include="Tests\BitSwapperMSUnitTests.cs" />
     <Compile Include="Tests\BitSwapperNUnitTests.cs" />
+    <Compile Include="Tests\FilterDigitsTests.cs" />
+    <Compile Include="Tests\FindNthRootTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
