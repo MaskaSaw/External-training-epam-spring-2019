@@ -10,7 +10,7 @@ namespace NET.S._2019.Marchyk._02.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void ArgumentTest()
         {
-            BitSwapper.InsertNumber(0, 0, 3, 1);   
+            BitSwapper.InsertNumber(0, 0, 2, 33);   
         }
 
         [TestMethod]
