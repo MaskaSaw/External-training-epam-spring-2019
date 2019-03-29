@@ -1,0 +1,29 @@
+1. Implement a class for calculationg GCD for 2, 3 and more different numbers using Euclide Algorithm
+(http://en.wikipedia.org/wiki/Euclidean_algorithm , https://habrahabr.ru/post/205106/,
+https://habrahabr.ru/post/205106/ ). All class methods except of calculating GCD also should determine a time needed for making 
+calculations. Add to class methods that realize Stein algorithm (binary Euclide algorithm) as well.
+(http://en.wikipedia.org/wiki/Binary_GCD_algorithm, https://habrahabr.ru/post/205106/ ). Make some tests to check the correct app work.
+2. Implement an extension method for getting string double representation of real number of double accuracy using format IEEE 754
+(do it without any converter classes). Make some unit tests like that:
+[TestCase(-255.255, ExpectedResult =
+"1100000001101111111010000010100011110101110000101000111101011100")]
+[TestCase(255.255, ExpectedResult =
+"0100000001101111111010000010100011110101110000101000111101011100")]
+[TestCase(4294967295.0, ExpectedResult =
+"0100000111101111111111111111111111111111111000000000000000000000")]
+[TestCase(double.MinValue, ExpectedResult =
+"1111111111101111111111111111111111111111111111111111111111111111")]
+[TestCase(double.MaxValue, ExpectedResult =
+"0111111111101111111111111111111111111111111111111111111111111111")]
+[TestCase(double.Epsilon, ExpectedResult =
+"0000000000000000000000000000000000000000000000000000000000000001")]
+[TestCase(double.NaN, ExpectedResult =
+"1111111111111000000000000000000000000000000000000000000000000000")]
+[TestCase(double.NegativeInfinity, ExpectedResult =
+"1111111111110000000000000000000000000000000000000000000000000000")]
+[TestCase(double.PositiveInfinity, ExpectedResult =
+"0111111111110000000000000000000000000000000000000000000000000000")]
+[TestCase(-0.0, ExpectedResult =
+"1000000000000000000000000000000000000000000000000000000000000000")]
+[TestCase(0.0, ExpectedResult =
+"0000000000000000000000000000000000000000000000000000000000000000")]
