@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="GCDTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToBinaryStringConverterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,8 +1,10 @@
-﻿namespace Algorithms.Tests
+﻿using System;
+using Algorithms;
+using NUnit.Framework;
+
+namespace Algorithms.Tests
 {
-    using System;
-    using Algorithms;
-    using NUnit.Framework;
+    
 
     public class GCDTests
     {
