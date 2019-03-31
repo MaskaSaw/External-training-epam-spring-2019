@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JaggedArrayTest.cs" />
     <Compile Include="PolynomialTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,9 +56,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NET.S.2019.Marchyk.04\Polynomial.csproj">
+    <ProjectReference Include="..\BubbleSorting\BubbleSorting.csproj">
+      <Project>{8280ddd0-47ee-490b-9012-d16a2325d53f}</Project>
+      <Name>BubbleSorting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NET.S.2019.Marchyk.04\Polynom.csproj">
       <Project>{3177d437-8fed-49c1-bba0-a05393efc40a}</Project>
-      <Name>Polynomial</Name>
+      <Name>Polynom</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
