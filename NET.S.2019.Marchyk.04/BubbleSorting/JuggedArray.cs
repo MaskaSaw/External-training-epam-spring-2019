@@ -23,7 +23,7 @@ namespace BubbleSorting
             /// </summary>
             /// <param name="arr1">First array</param>
             /// <param name="arr2">Second array</param>
-            public void Swap(ref int[] arr1, ref int[] arr2)
+            private void Swap(ref int[] arr1, ref int[] arr2)
             {
                 int[] buff = arr1;
                 arr1 = arr2;
@@ -35,7 +35,7 @@ namespace BubbleSorting
             /// </summary>
             /// <param name="array"></param>
             /// <returns>Minimal element in a row</returns>
-            public int Min(int[] array)
+            private int Min(int[] array)
             {
                 int min = int.MaxValue;
                 foreach (int item in array)
@@ -53,7 +53,7 @@ namespace BubbleSorting
             /// </summary>
             /// <param name="array"></param>
             /// <returns>Maximal element in a row</returns>
-            public int Max(int[] array)
+            private int Max(int[] array)
             {
                 int max = int.MinValue;
                 foreach (int item in array)
@@ -71,7 +71,7 @@ namespace BubbleSorting
             /// </summary>
             /// <param name="array"></param>
             /// <returns>Sum of all elements in a row</returns>
-            public int Sum(int[] array)
+            private int Sum(int[] array)
             {
                 int sum = 0;
                 foreach (int element in array)
