@@ -230,6 +230,28 @@ namespace Polynom
         }
 
         /// <summary>
+        /// Reversed overloaded polynomial operation * for int multiplier
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        public static Polynomial operator *(int multiplier, Polynomial polynomial)
+        {
+            return polynomial * multiplier;
+        }
+
+        /// <summary>
+        /// Reversed overloaded polynomial operation * for double multiplier
+        /// </summary>
+        /// <param name="multiplier"></param>
+        /// <param name="polynomial"></param>
+        /// <returns></returns>
+        public static Polynomial operator *(double multiplier, Polynomial polynomial)
+        {
+            return polynomial * multiplier;
+        }
+
+        /// <summary>
         /// Overloadede polynomial operation ==
         /// </summary>
         /// <param name="first">First polynomial</param>

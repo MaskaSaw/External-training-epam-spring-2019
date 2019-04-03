@@ -6,86 +6,87 @@ using System.Threading.Tasks;
 
 namespace BubbleSorting
 {
-        public class JaggedArray
+    public class JaggedArray
+    {
+        public int[][] Array { get; }
+        /// <summary>
+        /// Constructor of JaggedArray
+        /// </summary>
+        /// <param name="array">Initializing array</param>
+        public JaggedArray(int[][] array)
         {
-            /// <summary>
-            /// Constructor of JaggedArray
-            /// </summary>
-            /// <param name="array">Initializing array</param>
-            public JaggedArray(int[][] array)
-            {
-                Array = array ?? throw new ArgumentNullException(nameof(array));
-            }
-            public int[][] Array { get; }
+            Array = array ?? throw new ArgumentNullException(nameof(array));
+        }
+           
 
-            /// <summary>
-            /// Method for swapping elements in JaggedArray
-            /// </summary>
-            /// <param name="arr1">First array</param>
-            /// <param name="arr2">Second array</param>
-            private void Swap(ref int[] arr1, ref int[] arr2)
-            {
-                int[] buff = arr1;
-                arr1 = arr2;
-                arr2 = buff;
-            }
+        /// <summary>
+        /// Method for swapping elements in JaggedArray
+        /// </summary>
+        /// <param name="arr1">First array</param>
+        /// <param name="arr2">Second array</param>
+        private void Swap(ref int[] arr1, ref int[] arr2)
+        {
+            int[] buff = arr1;
+            arr1 = arr2;
+            arr2 = buff;
+        }
 
-            /// <summary>
-            /// Method for searching min element in a row
-            /// </summary>
-            /// <param name="array"></param>
-            /// <returns>Minimal element in a row</returns>
-            private int Min(int[] array)
+        /// <summary>
+        /// Method for searching min element in a row
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns>Minimal element in a row</returns>
+        private int Min(int[] array)
+        {
+            int min = int.MaxValue;
+            foreach (int item in array)
             {
-                int min = int.MaxValue;
-                foreach (int item in array)
+                if (item < min)
                 {
-                    if (item < min)
-                    {
-                        min = item;
-                    }
+                    min = item;
                 }
-                return min;
             }
+            return min;
+        }
 
-            /// <summary>
-            /// Method for searching max element in a row
-            /// </summary>
-            /// <param name="array"></param>
-            /// <returns>Maximal element in a row</returns>
-            private int Max(int[] array)
+        /// <summary>
+        /// Method for searching max element in a row
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns>Maximal element in a row</returns>
+        private int Max(int[] array)
+        {
+            int max = int.MinValue;
+            foreach (int item in array)
             {
-                int max = int.MinValue;
-                foreach (int item in array)
+                if (item > max)
                 {
-                    if (item > max)
-                    {
-                        max = item;
-                    }
+                    max = item;
                 }
-                return max;
             }
+            return max;
+        }
 
-            /// <summary>
-            /// Method for finding summ of elements
-            /// </summary>
-            /// <param name="array"></param>
-            /// <returns>Sum of all elements in a row</returns>
-            private int Sum(int[] array)
+        /// <summary>
+        /// Method for finding summ of elements
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns>Sum of all elements in a row</returns>
+        private int Sum(int[] array)
+        {
+            int sum = 0;
+            foreach (int element in array)
             {
-                int sum = 0;
-                foreach (int element in array)
-                {
-                    sum += element;
-                }
-                return sum;
+                sum += element;
             }
+            return sum;
+        }
             
-            /// <summary>
-            /// Method for sorting by sum of elements in a row
-            /// </summary>
-            public void SortBySum()
-            {
+        /// <summary>
+        /// Method for sorting by sum of elements in a row
+        /// </summary>
+        public void SortBySum()
+        {
             for (int i = 0; i < Array.Length; i++)
             {
                 for (int j = Array.Length - 1; j > i; j--)
@@ -98,28 +99,28 @@ namespace BubbleSorting
             }
         }
             
-            /// <summary>
-            /// Method for sorting by maximal element in a row
-            /// </summary>
-            public void SortByMax()
+        /// <summary>
+        /// Method for sorting by maximal element in a row
+        /// </summary>
+        public void SortByMax()
+        {
+            for (int i = 0; i < Array.Length; i++)
             {
-                for (int i = 0; i < Array.Length; i++)
+                for (int j = Array.Length - 1; j > i; j--)
                 {
-                    for (int j = Array.Length - 1; j > i; j--)
+                    if (Max(Array[i]) < Max(Array[j]))
                     {
-                        if (Max(Array[i]) < Max(Array[j]))
-                        {
-                            Swap(ref Array[i], ref Array[j]);
-                        }
+                        Swap(ref Array[i], ref Array[j]);
                     }
                 }
             }
+        }
             
-            /// <summary>
-            /// Method for sorting by minimal element in a row
-            /// </summary>
-            public void SortByMin()
-            {
+        /// <summary>
+        /// Method for sorting by minimal element in a row
+        /// </summary>
+        public void SortByMin()
+        {
             for (int i = 0; i < Array.Length; i++)
             {
                 for (int j = Array.Length - 1; j > i; j--)
@@ -131,5 +132,5 @@ namespace BubbleSorting
                 }
             }
         }
-        }
+    }
 }
