@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace ConsoleProgram
             bookService.Sort(null);
             PrintBook(bookService.GetAllBooks());
 
+            Console.WriteLine(books[0].ToString("2", CultureInfo.CurrentCulture));
             bookService.Save();
             Console.ReadKey();
         }

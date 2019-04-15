@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Books
 {
-    public class Book : IComparable, IEquatable<Book>
+    public class Book : IComparable, IEquatable<Book>, IFormattable
     {
         public string ISBN { get; }
         public string Author { get; }
@@ -69,7 +69,25 @@ namespace Books
 
         public override string ToString()
         {
-            return "Book: " + Name + ", Author: " + Author + ", Year of publishing:. " + Year + ", " + Pages + " p." + ", ISBN: " + ISBN + ", Publisher : " + Publisher + "," + Price + " y.e ";
+            return ToString("5", null);
+        }
+
+        public string ToString(string format, IFormatProvider formatter)
+        {
+            if (string.IsNullOrEmpty(format)) format = "5";
+
+            switch (format)
+            {
+                case "1": return "Book: " + Name + ", Author: " + Author;
+                case "2": return "Book: " + Name + ", Author: " + Author + " ISBN: " + ISBN;
+                case "3": return "Book: " + Name + ", Author: " + Author + ", Year of publishing:. " + Year + ", " + Pages + " p." + ", ISBN: " + ISBN;
+                case "4": return "Book: " + Name + ", Author: " + Author + ", Year of publishing:. " + Year + ", " + Pages + " p." + ", ISBN: " + ISBN + ", Publisher : " + Publisher;
+                case "5": return "Book: " + Name + ", Author: " + Author + ", Year of publishing:. " + Year + ", " + Pages + " p." + ", ISBN: " + ISBN + ", Publisher : " + Publisher + "," + Price + " y.e ";
+                default:
+                    throw new FormatException(String.Format("The {0} format string is not supported.", format));
+            }
+
+            
         }
 
         public bool Equals(Book book)
