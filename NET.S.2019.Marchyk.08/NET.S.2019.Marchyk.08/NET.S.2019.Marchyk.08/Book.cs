@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Books
 {
+    /// <summary>
+    /// Book essense
+    /// </summary>
     public class Book : IComparable, IEquatable<Book>, IFormattable
     {
+        /// <summary>
+        /// Fields that contain information about book
+        /// </summary>
         public string ISBN { get; }
         public string Author { get; }
         public string Name { get; }
@@ -16,6 +18,16 @@ namespace Books
         public int Pages { get; }
         public double Price { get; }
 
+        /// <summary>
+        /// Book constructor
+        /// </summary>
+        /// <param name="isbn"></param>
+        /// <param name="author"></param>
+        /// <param name="name"></param>
+        /// <param name="publisher"></param>
+        /// <param name="year"></param>
+        /// <param name="pages"></param>
+        /// <param name="price"></param>
         public Book(string isbn, string author, string name, string publisher, int year, int pages, double price)
         {
             ISBN = isbn;
@@ -27,6 +39,11 @@ namespace Books
             Price = price;
         }
 
+        /// <summary>
+        /// Method for comparing books
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns>Result of compariong</returns>
         public int CompareTo(Book book)
         {
             if (ReferenceEquals(book, null))
@@ -37,6 +54,11 @@ namespace Books
             return string.Compare(book.Name, Name);
         }
 
+        /// <summary>
+        /// Mthod or comparing objects of any type with book
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>Result of comparing</returns>
         public int CompareTo(object obj)
         {
             if (ReferenceEquals(obj, null))
@@ -49,6 +71,11 @@ namespace Books
             return CompareTo(book);
         }
 
+        /// <summary>
+        /// Overrided Equals method for Book class
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>Result of comparing</returns>
         public override bool Equals(object obj)
         {
             var book = (Book)obj;
@@ -62,16 +89,30 @@ namespace Books
             return false;  
         }
 
+        /// <summary>
+        /// Overrided GetHashCode method for Book class
+        /// </summary>
+        /// <returns>Hash of Book object</returns>
         public override int GetHashCode()
         {
             return ISBN.GetHashCode();
         }
 
+        /// <summary>
+        /// Overrided ToString method for Book class
+        /// </summary>
+        /// <returns>String representation of Book object</returns>
         public override string ToString()
         {
             return ToString("5", null);
         }
 
+        /// <summary>
+        /// Method ToString from IFormattable interface
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="formatter"></param>
+        /// <returns>Different formats of string representation of Book object</returns>
         public string ToString(string format, IFormatProvider formatter)
         {
             if (string.IsNullOrEmpty(format)) format = "5";
@@ -90,6 +131,11 @@ namespace Books
             
         }
 
+        /// <summary>
+        /// Equals method for comparing Book objects
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns>Result of comparing</returns>
         public bool Equals(Book book)
         {
             if (ReferenceEquals(book, null))

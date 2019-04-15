@@ -8,10 +8,17 @@ using System.IO;
 
 namespace BookStorage
 {
+    /// <summary>
+    /// Class for saving and loading Book objects from binary file
+    /// </summary>
     public class BookListStorage
     {
         private readonly string Path;
 
+        /// <summary>
+        /// BookListStorage constructor
+        /// </summary>
+        /// <param name="path"></param>
         public BookListStorage(string path)
         {
             if (path == null || path.Length == 0)
@@ -22,6 +29,10 @@ namespace BookStorage
             Path = path;
         }
 
+        /// <summary>
+        /// Loads all Book objects from binary file to list
+        /// </summary>
+        /// <returns>List of Book objects</returns>
         public List<Book> GetBooksList()
         {
             List<Book> books = new List<Book>();
@@ -45,6 +56,10 @@ namespace BookStorage
             return books;
         }
 
+        /// <summary>
+        /// Saves Book object to binary file
+        /// </summary>
+        /// <param name="book"></param>
         public void AddBookToFile(Book book)
         {
             using (var bw = new BinaryWriter(File.Open(Path, FileMode.Append,
@@ -54,6 +69,10 @@ namespace BookStorage
             }
         }
 
+        /// <summary>
+        /// Saves list of Book objects to binary file
+        /// </summary>
+        /// <param name="books"></param>
         public void SaveBooks(List<Book> books)
         {
 
@@ -67,6 +86,11 @@ namespace BookStorage
             }
         }
 
+        /// <summary>
+        /// Incapsulated logic of saving Book object to file
+        /// </summary>
+        /// <param name="bw"></param>
+        /// <param name="book"></param>
         public static void Writer(BinaryWriter bw, Book book)
         {
             bw.Write(book.ISBN);

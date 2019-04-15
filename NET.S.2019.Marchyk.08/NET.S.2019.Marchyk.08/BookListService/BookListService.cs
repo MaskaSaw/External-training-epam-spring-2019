@@ -9,12 +9,18 @@ using BookStorage;
 
 namespace BookService
 {
+    /// <summary>
+    /// Service for operations with Book objects
+    /// </summary>
     public class BookListService
     {
         private readonly BookListStorage bookStorage;
         private List<Book> books = new List<Book>();
 
-
+        /// <summary>
+        /// BookListService constructor
+        /// </summary>
+        /// <param name="bookStorage"></param>
         public BookListService(BookListStorage bookStorage)
         {
             if (ReferenceEquals(bookStorage, null))
@@ -25,6 +31,10 @@ namespace BookService
 
         }
 
+        /// <summary>
+        /// Adds new Book object to list
+        /// </summary>
+        /// <param name="book"></param>
         public void AddBookToShop(Book book)
         {
             if (ReferenceEquals(book, null))
@@ -36,6 +46,10 @@ namespace BookService
 
         }
 
+        /// <summary>
+        /// Removes Book object from list
+        /// </summary>
+        /// <param name="book"></param>
         public void RemoveBookFromShop(Book book)
         {
             if (ReferenceEquals(book, null))
@@ -45,6 +59,11 @@ namespace BookService
             books.Remove(book);
         }
 
+        /// <summary>
+        /// Finds Book object by given parameter
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns>Book object that contains given parameter</returns>
         public Book FindBook(IFind param)
         {
             if (ReferenceEquals(param, null))
@@ -54,6 +73,10 @@ namespace BookService
             return param.FindBookByTag();
         }
 
+        /// <summary>
+        /// Sorting of Book list
+        /// </summary>
+        /// <param name="comparator"></param>
         public void Sort(IComparer<Book> comparator)
         {
             var booksArray = books.ToArray();
@@ -70,11 +93,18 @@ namespace BookService
             books.AddRange(booksArray);
         }
 
+        /// <summary>
+        /// Saves Book object to file
+        /// </summary>
         public void Save()
         {
             bookStorage.SaveBooks(books);
         }
 
+        /// <summary>
+        /// Finds out all saved Book objects and represent them as a list of Book objects
+        /// </summary>
+        /// <returns>List of Book objects</returns>
         public List<Book> GetAllBooks()
         {
             return bookStorage.GetBooksList();

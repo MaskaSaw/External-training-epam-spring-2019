@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace BookService
 {
+    /// <summary>
+    /// Class for finding Book object by its ISBN
+    /// </summary>
     class FindBookByISBN : IFind
     {
         public string ISBN { get; }
