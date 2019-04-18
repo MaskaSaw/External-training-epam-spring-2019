@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStorage", "BookStorage\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleProgram", "Console\ConsoleProgram.csproj", "{34F0D1F7-49E5-4C28-A980-F94D4B04DF71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logs", "Logs\Logs.csproj", "{210A4D7D-9B1A-4C6E-9607-5E412AC7D1DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{34F0D1F7-49E5-4C28-A980-F94D4B04DF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34F0D1F7-49E5-4C28-A980-F94D4B04DF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34F0D1F7-49E5-4C28-A980-F94D4B04DF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210A4D7D-9B1A-4C6E-9607-5E412AC7D1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210A4D7D-9B1A-4C6E-9607-5E412AC7D1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210A4D7D-9B1A-4C6E-9607-5E412AC7D1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210A4D7D-9B1A-4C6E-9607-5E412AC7D1DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

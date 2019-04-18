@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{34F0D1F7-49E5-4C28-A980-F94D4B04DF71}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Console</RootNamespace>
-    <AssemblyName>Console</AssemblyName>
+    <ProjectGuid>{210A4D7D-9B1A-4C6E-9607-5E412AC7D1DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logs</RootNamespace>
+    <AssemblyName>Logs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,29 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BookListService\BookService.csproj">
-      <Project>{35bd9f33-6602-461b-b985-fdf4fd25c14b}</Project>
-      <Name>BookService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BookStorage\BookStorage.csproj">
-      <Project>{a4f9df44-0298-44df-a55e-97eae82b932d}</Project>
-      <Name>BookStorage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logs\Logs.csproj">
-      <Project>{210a4d7d-9b1a-4c6e-9607-5e412ac7d1da}</Project>
-      <Name>Logs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NET.S.2019.Marchyk.08\Books.csproj">
-      <Project>{58c1c92a-a3c8-4ad2-99b5-0a29013e7bb3}</Project>
-      <Name>Books</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
